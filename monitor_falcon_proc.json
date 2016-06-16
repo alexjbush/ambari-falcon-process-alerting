@@ -1,0 +1,39 @@
+{
+  "AlertDefinition": {
+    "service_name": "FALCON",
+    "component_name": "FALCON_SERVER",
+    "name": "falcon_process_alert",
+    "label": "Falcon Process Alerting",
+    "description": "This alert is triggered if Falcon processes are failing.",
+    "interval": 5,
+    "scope": "SERVICE",
+    "enabled": true,
+    "source": {
+      "type": "SCRIPT",
+      "path": "falconProcessAlert.py",
+      "parameters": [
+      {
+        "name": "process_pattern",
+        "display_name": "Process Name pattern",
+        "value": "-dr-",
+        "type": "STRING",
+        "description": "Process name pattern to filter on"
+      },
+      {
+        "name": "monitor_window",
+        "display_name": "Monitoring Window",
+        "value": 30,
+        "type": "STRING",
+        "units": "minutes",
+        "description": "Time window in which at least one successful run should complete"
+      },
+      {
+        "name": "failure_tolerance",
+        "display_name": "Failure Tolerance",
+        "value": -1,
+        "type": "STRING",
+        "description": "Number of failed workflows to tolerate in the monitoring window (-1 to ignore failures)"
+      }]
+    }
+  }
+}
