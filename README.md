@@ -1,4 +1,4 @@
-# ambari-falcon_process-alerting
+# ambari falcon process alerting
 
 Ambari Alerts triggered from Falcon process statuses
 
