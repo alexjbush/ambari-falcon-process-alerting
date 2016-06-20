@@ -4,7 +4,15 @@ Ambari Alerts triggered from Falcon process statuses
 
 Works in both Kerberised and non-Kerberised environments.
 
+Queries the Oozie server in the Falcon Process and Cluster definitions to check Oozie workflow statuses over time.
+
 ## Alert definition
+
+The alert takes three variables for configuration.
+
+1. The whitelist pattern to filter Falcon Process names. Only Falcon Processes that contain this pattern will be alerted on.
+2. The timeframe in minutes in the past from now in which workflows should be monitored. At least one successful workflow must complete in this window.
+3. The number of workflow failures to tolerate in the monitoring window. Give `-1` to ignore failures.
 
 ```javascript
       {
