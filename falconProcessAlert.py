@@ -94,7 +94,7 @@ def execute(configurations={}, parameters={}, host_name=None):
 
   falcon_port = configurations[FALCON_PORT]
 
-  if lower(str(configurations[FALCON_TLS])) == 'true':
+  if str(configurations[FALCON_TLS]).lower() == 'true':
     protocol = 'https'
   else:
     protocol = 'http'
